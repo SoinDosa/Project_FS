@@ -1,6 +1,6 @@
+using PFS.Data.StaticData.staticSettingsData;
 using PFS.Util.sceneFader;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace PFS.LogoScene.logoScene
@@ -9,6 +9,7 @@ namespace PFS.LogoScene.logoScene
     {
         private void Start()
         {
+            print(StaticSettingsData.language);
             StartCoroutine(GameStart());
         }
 
