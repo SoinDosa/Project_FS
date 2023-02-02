@@ -66,6 +66,15 @@ namespace PFS.Util.gameDataLoader
 
         private void SetupUIStringData()
         {
+            switch(StaticSettingsData.language)
+            {
+                case 0:
+                    _uiStringDataPath = $"{_uiStringDataPath}_KOR.json";
+                    break;
+                case 1:
+                    _uiStringDataPath = $"{_uiStringDataPath}_ENG.json";
+                    break;
+            }
             string jsonData = _dataLoader.GetJsonString(_uiStringDataPath);
 
             StaticUIStringData.uiString = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonData);

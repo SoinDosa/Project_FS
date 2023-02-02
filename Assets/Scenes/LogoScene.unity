@@ -920,7 +920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SETTINGS_DATA_NAME: SettingConfig.json
   USER_DATA_NAME: UserData.json
-  UI_STRING_DATA_NAME: UI_STRING_ENG.json
+  UI_STRING_DATA_NAME: UI_STRING
 --- !u!4 &1601959614
 Transform:
   m_ObjectHideFlags: 0

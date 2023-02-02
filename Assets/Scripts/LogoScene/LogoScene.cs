@@ -9,7 +9,6 @@ namespace PFS.LogoScene.logoScene
     {
         private void Start()
         {
-            print(StaticSettingsData.language);
             StartCoroutine(GameStart());
         }
 
