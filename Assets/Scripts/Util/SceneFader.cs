@@ -22,8 +22,15 @@ namespace PFS.Util.sceneFader
             }
         }
 
+        public void ActiveOff()
+        {
+            _fadeImage.gameObject.SetActive(false);
+        }
+
         public void FadeIn()
         {
+            _fadeImage.gameObject.SetActive(true);
+            _fadeImage.color = new Vector4(0, 0, 0, 1);
             _fadeImage.DOFade(0, 2f).SetEase(Ease.Linear);
         }
 
@@ -32,5 +39,4 @@ namespace PFS.Util.sceneFader
             _fadeImage.DOFade(1, 2f).SetEase(Ease.Linear);
         }
     }
-
 }
