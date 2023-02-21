@@ -7,6 +7,7 @@ namespace PFS.Util.sceneFader
     public class SceneFader : MonoBehaviour
     {
         public static SceneFader instance;
+        public float fadeTime;
         [SerializeField] private Image _fadeImage;
 
         private void Awake()
@@ -31,12 +32,12 @@ namespace PFS.Util.sceneFader
         {
             _fadeImage.gameObject.SetActive(true);
             _fadeImage.color = new Vector4(0, 0, 0, 1);
-            _fadeImage.DOFade(0, 2f).SetEase(Ease.Linear);
+            _fadeImage.DOFade(0, fadeTime).SetEase(Ease.Linear);
         }
 
         public void FadeOut()
         {
-            _fadeImage.DOFade(1, 2f).SetEase(Ease.Linear);
+            _fadeImage.DOFade(1, fadeTime).SetEase(Ease.Linear);
         }
     }
 }
