@@ -1,3 +1,5 @@
+using PFS.Data.Common.languages;
+
 namespace PFS.Data.StaticData.staticSettingsData
 {
     public static class StaticSettingsData

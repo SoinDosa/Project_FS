@@ -1,3 +1,5 @@
 {
-    "GAME_START":"Game Start"
+    "GAME_START":"Game Start",
+    "SETTINGS":"Settings",
+    "QUIT_GAME":"Quit Game"
 }
