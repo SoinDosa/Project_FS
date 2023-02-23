@@ -1,5 +1,8 @@
 {
     "GAME_START":"Game Start",
     "SETTINGS":"Settings",
-    "QUIT_GAME":"Quit Game"
+    "QUIT_GAME":"Quit Game",
+    "BGM":"BGM",
+    "EFX":"Effect",
+    "LANGUAGE":"Language"
 }

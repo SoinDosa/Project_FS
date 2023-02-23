@@ -1,5 +1,8 @@
 {
     "GAME_START":"게임 시작",
     "SETTINGS":"설정",
-    "QUIT_GAME":"게임 종료"
+    "QUIT_GAME":"게임 종료",
+    "BGM":"배경음",
+    "EFX":"효과음",
+    "LANGUAGE":"언어"
 }

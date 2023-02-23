@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6426c288ad967c14aa8472a1730cde14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _textKey: SETTINGS
+  _textKey: EFX
 --- !u!114 &32239540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4714,7 +4714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6426c288ad967c14aa8472a1730cde14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _textKey: SETTINGS
+  _textKey: LANGUAGE
 --- !u!114 &1757426348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5224,7 +5224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6426c288ad967c14aa8472a1730cde14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _textKey: SETTINGS
+  _textKey: BGM
 --- !u!114 &1916424382
 MonoBehaviour:
   m_ObjectHideFlags: 0
