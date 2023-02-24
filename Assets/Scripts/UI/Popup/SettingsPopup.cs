@@ -23,7 +23,7 @@ namespace PFS.UI.Popup.settingsPopup
         private DataSaver _dataSaver = new();
         private DataLoader _dataLoader = new();
 
-        private void Start()
+        private void Awake()
         {
             _uiStringDataPath = $"{Application.streamingAssetsPath}/{UI_STRING_DATA_NAME}";
         }
@@ -66,7 +66,6 @@ namespace PFS.UI.Popup.settingsPopup
             {
                 case 0:
                     jsonData = _dataLoader.GetJsonString($"{_uiStringDataPath}_KOR.json");
-                    _uiStringDataPath = $"{_uiStringDataPath}_KOR.json";
                     break;
                 case 1:
                     jsonData = _dataLoader.GetJsonString($"{_uiStringDataPath}_ENG.json");
