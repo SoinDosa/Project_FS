@@ -860,7 +860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6426c288ad967c14aa8472a1730cde14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _textKey: GAME_START
+  _textKey: NO
 --- !u!114 &311586560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1310,7 +1310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6426c288ad967c14aa8472a1730cde14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _textKey: SETTINGS
+  _textKey: GAME_QUIT
 --- !u!114 &443063515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1491,7 +1491,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 453835973}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 495133382}
+        m_TargetAssemblyTypeName: PFS.UI.Popup.quitPopup.QuitPopup, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &453835973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1677,6 +1689,7 @@ GameObject:
   - component: {fileID: 495133380}
   - component: {fileID: 495133379}
   - component: {fileID: 495133381}
+  - component: {fileID: 495133382}
   m_Layer: 5
   m_Name: Quit_Popup
   m_TagString: Untagged
@@ -1757,6 +1770,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3b405a27b778244d8716a9eea829992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &495133382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 495133377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf00c7034e0a5c42880209930a41150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &520092621
@@ -3064,7 +3089,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1061550588}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 495133382}
+        m_TargetAssemblyTypeName: PFS.UI.Popup.quitPopup.QuitPopup, Assembly-CSharp
+        m_MethodName: OnClosePopup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1061550588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3738,7 +3775,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1416257243}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 495133382}
+        m_TargetAssemblyTypeName: PFS.UI.Popup.quitPopup.QuitPopup, Assembly-CSharp
+        m_MethodName: OnClosePopup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1416257243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5075,7 +5124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6426c288ad967c14aa8472a1730cde14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _textKey: GAME_START
+  _textKey: YES
 --- !u!114 &1900694474
 MonoBehaviour:
   m_ObjectHideFlags: 0

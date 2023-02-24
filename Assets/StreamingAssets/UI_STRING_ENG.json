@@ -4,5 +4,8 @@
     "QUIT_GAME":"Quit Game",
     "BGM":"BGM",
     "EFX":"Effect",
-    "LANGUAGE":"Language"
+    "LANGUAGE":"Language",
+    "GAME_QUIT":"Really?",
+    "YES":"Yes",
+    "NO":"No"
 }
