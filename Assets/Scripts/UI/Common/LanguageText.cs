@@ -19,8 +19,24 @@ namespace PFS.UI.Common.languageText
 
         private void Start()
         {
+            ChangeLanguage();
+        }
+
+        private void OnEnable()
+        {
+            LanguageActionContainer.LanguageChange += ChangeLanguage;
+        }
+
+        private void OnDisable()
+        {
+            LanguageActionContainer.LanguageChange -= ChangeLanguage;
+        }
+
+        private void ChangeLanguage()
+        {
             Debug.Log(StaticUIStringData.uiString[_textKey]);
             _text.text = StaticUIStringData.uiString[_textKey];
         }
+
     }
 }
