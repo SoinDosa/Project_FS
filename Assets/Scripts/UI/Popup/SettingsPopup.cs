@@ -4,7 +4,9 @@ using PFS.Data.Common.dataSaver;
 using PFS.Data.DataStructures.settingsDataStructure;
 using PFS.Data.StaticData.staticSettingsData;
 using PFS.Data.StaticData.staticUIStringData;
+using PFS.Enum.efxEnum;
 using PFS.UI.Common.popupBase;
+using PFS.Util.soundManager;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -30,6 +32,7 @@ namespace PFS.UI.Popup.settingsPopup
 
         public override void OnOpenPopup()
         {
+            base.OnOpenPopup();
             _bgmToggle.isOn = StaticSettingsData.isOnBGM;
             _efxToggle.isOn = StaticSettingsData.isOnEFX;
             _languageDropdown.value = StaticSettingsData.language;
@@ -44,11 +47,15 @@ namespace PFS.UI.Popup.settingsPopup
         public void ChangeIsOnBGM()
         {
             StaticSettingsData.isOnBGM = _bgmToggle.isOn;
+            SoundManager.instance.SetBGM(StaticSettingsData.isOnBGM);
+            SoundManager.instance.PlayEFX(EFXEnum.CLICK_SOUND);
         }
 
         public void ChangeIsOnEFX()
         {
             StaticSettingsData.isOnEFX = _efxToggle.isOn;
+            SoundManager.instance.SetEFX(StaticSettingsData.isOnEFX);
+            SoundManager.instance.PlayEFX(EFXEnum.CLICK_SOUND);
         }
 
         public void ChangeLanguage()
@@ -56,6 +63,7 @@ namespace PFS.UI.Popup.settingsPopup
             StaticSettingsData.language = _languageDropdown.value;
             SetupUIStringData();
             LanguageActionContainer.LanguageChange();
+            SoundManager.instance.PlayEFX(EFXEnum.CLICK_SOUND);
         }
 
         private void SetupUIStringData()

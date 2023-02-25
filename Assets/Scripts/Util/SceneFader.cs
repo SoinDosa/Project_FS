@@ -30,13 +30,15 @@ namespace PFS.Util.sceneFader
 
         public void FadeIn()
         {
-            _fadeImage.gameObject.SetActive(true);
             _fadeImage.color = new Vector4(0, 0, 0, 1);
+            _fadeImage.gameObject.SetActive(true);
             _fadeImage.DOFade(0, fadeTime).SetEase(Ease.Linear);
         }
 
         public void FadeOut()
         {
+            _fadeImage.color = new Vector4(0, 0, 0, 0);
+            _fadeImage.gameObject.SetActive(true);
             _fadeImage.DOFade(1, fadeTime).SetEase(Ease.Linear);
         }
     }

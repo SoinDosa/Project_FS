@@ -5,11 +5,14 @@ using GoogleMobileAds.Api;
 using GoogleMobileAds;
 using System;
 using PFS.UI.Common.popupBase;
+using PFS.Util.sceneLoader;
+using PFS.Util.sceneFader;
 
 namespace PFS.UI.LobbyScene.lobbyScene
 {
     public class LobbyScene : MonoBehaviour
     {
+        [SerializeField] private string GAME_SCENE_NAME;
         private BannerView _bannerView;
 
 #if UNITY_ANDROID
@@ -19,12 +22,25 @@ namespace PFS.UI.LobbyScene.lobbyScene
 #else
   private string _adUnitId = "unused";
 #endif
+
         void Start()
         {
             MobileAds.Initialize((InitializationStatus initStatus) =>
             {
                 LoadAd();
             });
+        }
+
+        public void GameStart()
+        {
+            StartCoroutine(GameStartCoroutine());
+        }
+
+        IEnumerator GameStartCoroutine()
+        {
+            SceneFader.instance.FadeOut();
+            yield return new WaitForSeconds(SceneFader.instance.fadeTime);
+            SceneLoader.instance.LoadSceneAsync(GAME_SCENE_NAME);
         }
 
         public void OpenPopup(PopupBase popup)

@@ -22,7 +22,7 @@ namespace PFS.Util.gameDataLoader
         private DataLoader _dataLoader = new();
 
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             _settingsDataPath = $"{Application.persistentDataPath}/{SETTINGS_DATA_NAME}";
             _userDataPath = $"{Application.persistentDataPath}/{USER_DATA_NAME}";
