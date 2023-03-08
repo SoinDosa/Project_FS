@@ -1,3 +1,4 @@
+using PFS.GamePlay.ObjectPooling.playerPool;
 using PFS.GamePlay.Player.playerController;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,19 +13,22 @@ namespace PFS.GamePlay.Player.playerEntity
         private PlayerController _playerController;
         private Rigidbody2D _rigidbody2D;
         private BoxCollider2D _footCollider;
+        private PlayerPool _playerPool;
+        private bool isRemoved;
         public bool isGround;
 
-        private void Awake()
+        public void OnSpawned()
         {
+            isRemoved = false;
             _playerController = FindObjectOfType<PlayerController>();
             _playerController.playerEntities.Add(this);
-
             _rigidbody2D = GetComponent<Rigidbody2D>();
-
+            _playerPool = FindObjectOfType<PlayerPool>();
         }
 
-        private void OnDisable()
+        public void OnRemoved()
         {
+            isRemoved = true;
             _playerController.playerEntities.Remove(this);
         }
 
@@ -43,9 +47,11 @@ namespace PFS.GamePlay.Player.playerEntity
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("DestroyZone"))
+            if (collision.CompareTag("DestroyZone") && isRemoved == false)
             {
-                this.gameObject.SetActive(false);
+                Debug.Log("Player removed");
+                OnRemoved();
+                _playerPool.DestoryObject(this.gameObject);
             }
         }
     }
