@@ -47,9 +47,9 @@ namespace PFS.GamePlay.Player.playerEntity
             _playerController.playerEntities.Remove(this);
         }
 
-        public void Run()
+        public void Run(float dir)
         {
-            _rigidbody2D.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * _playerSpeed * Time.deltaTime, _rigidbody2D.velocity.y);
+            _rigidbody2D.velocity = new Vector2(dir * _playerSpeed * Time.deltaTime, _rigidbody2D.velocity.y);
         }
 
         public void Jump()

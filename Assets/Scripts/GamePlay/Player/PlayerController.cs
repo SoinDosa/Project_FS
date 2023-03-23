@@ -10,14 +10,20 @@ namespace PFS.GamePlay.Player.playerController
     public class PlayerController : MonoBehaviour
     {
         public List<PlayerEntity> playerEntities;
-        public Action MoveEntities;
+        public Action<float> MoveEntities;
         public Action JumpEntities;
 
-        private void Update()
+        public void PlayerMove(float dir)
         {
-            MoveEntities();
+            if(MoveEntities != null)
+            {
+                MoveEntities(dir);
+            }
+        }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+        public void JumpPlayer()
+        {
+            if (JumpEntities != null)
             {
                 JumpEntities();
             }
