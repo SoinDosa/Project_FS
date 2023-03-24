@@ -1,4 +1,4 @@
-using PFS.Enum.efxEnum;
+using PFS.Enum.sfxEnum;
 using PFS.Util.soundManager;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,12 +10,12 @@ namespace PFS.UI.Common.popupBase
     {
         public virtual void OnOpenPopup()
         {
-            SoundManager.instance.PlayEFX(EFXEnum.CLICK_SOUND);
+            SoundManager.instance.PlaySFX(SFXEnum.CLICK_SOUND);
         }
 
         public virtual void OnClosePopup()
         {
-            SoundManager.instance.PlayEFX(EFXEnum.CLICK_SOUND);
+            SoundManager.instance.PlaySFX(SFXEnum.CLICK_SOUND);
             this.gameObject.SetActive(false);
         }
     }

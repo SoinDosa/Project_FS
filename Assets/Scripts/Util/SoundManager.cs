@@ -1,6 +1,6 @@
 using PFS.Data.StaticData.staticSettingsData;
 using PFS.Enum.bgmEnum;
-using PFS.Enum.efxEnum;
+using PFS.Enum.sfxEnum;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,9 +13,9 @@ namespace PFS.Util.soundManager
         public static SoundManager instance;
 
         [SerializeField] private List<AudioClip> _bgmClipContainer;
-        [SerializeField] private List<AudioClip> _efxClipContainer;
+        [SerializeField] private List<AudioClip> _sfxClipContainer;
         [SerializeField] private AudioSource _bgmAudio;
-        [SerializeField] private List<AudioSource> _efxAudio;
+        [SerializeField] private List<AudioSource> _sfxAudio;
         [SerializeField] private AudioMixer _audioMixer;
 
         private void Awake()
@@ -34,7 +34,7 @@ namespace PFS.Util.soundManager
         private void Start()
         {
             SetBGM(StaticSettingsData.isOnBGM);
-            SetEFX(StaticSettingsData.isOnEFX);
+            SetSFX(StaticSettingsData.isOnSFX);
         }
 
         public void SetBGM(bool isOn)
@@ -49,15 +49,15 @@ namespace PFS.Util.soundManager
             }
         }
 
-        public void SetEFX(bool isOn)
+        public void SetSFX(bool isOn)
         {
             if (isOn)
             {
-                _audioMixer.SetFloat("EFX", 0.0f);
+                _audioMixer.SetFloat("SFX", 0.0f);
             }
             else
             {
-                _audioMixer.SetFloat("EFX", -80.0f);
+                _audioMixer.SetFloat("SFX", -80.0f);
             }
         }
 
@@ -67,18 +67,18 @@ namespace PFS.Util.soundManager
             _bgmAudio.Play();
         }
 
-        public void PlayEFX(EFXEnum name)
+        public void PlaySFX(SFXEnum name)
         {
-            foreach(var efx in _efxAudio)
+            foreach(var sfx in _sfxAudio)
             {
-                if (efx.isPlaying)
+                if (sfx.isPlaying)
                 {
                     continue;
                 }
                 else
                 {
-                    efx.clip = _efxClipContainer[(int)name];
-                    efx.Play();
+                    sfx.clip = _sfxClipContainer[(int)name];
+                    sfx.Play();
                     break;
                 }
             }

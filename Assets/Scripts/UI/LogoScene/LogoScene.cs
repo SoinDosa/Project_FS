@@ -1,5 +1,5 @@
 using PFS.Data.StaticData.staticSettingsData;
-using PFS.Enum.efxEnum;
+using PFS.Enum.sfxEnum;
 using PFS.Util.sceneFader;
 using PFS.Util.sceneLoader;
 using PFS.Util.soundManager;
@@ -20,7 +20,7 @@ namespace PFS.UI.LogoScene.logoScene
         IEnumerator GameStart()
         {
             SceneFader.instance.FadeIn();
-            SoundManager.instance.PlayEFX(EFXEnum.LOGO_ON);
+            SoundManager.instance.PlaySFX(SFXEnum.LOGO_ON);
             yield return new WaitForSeconds(SceneFader.instance.fadeTime + _waitTime);
             SceneFader.instance.FadeOut();
             yield return new WaitForSeconds(SceneFader.instance.fadeTime);

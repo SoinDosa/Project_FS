@@ -3,8 +3,7 @@ using PFS.Data.Common.dataLoader;
 using PFS.Data.Common.dataSaver;
 using PFS.Data.DataStructures.settingsDataStructure;
 using PFS.Data.StaticData.staticSettingsData;
-using PFS.Data.StaticData.staticUIStringData;
-using PFS.Enum.efxEnum;
+using PFS.Enum.sfxEnum;
 using PFS.UI.Common.popupBase;
 using PFS.Util.soundManager;
 using System.Collections.Generic;
@@ -19,7 +18,7 @@ namespace PFS.UI.Popup.settingsPopup
         [SerializeField] private string SETTINGS_DATA_NAME;
         [SerializeField] private string UI_STRING_DATA_NAME;
         [SerializeField] private Toggle _bgmToggle;
-        [SerializeField] private Toggle _efxToggle;
+        [SerializeField] private Toggle _sfxToggle;
         [SerializeField] private TMP_Dropdown _languageDropdown;
         private string _uiStringDataPath;
         private DataSaver _dataSaver = new();
@@ -34,7 +33,7 @@ namespace PFS.UI.Popup.settingsPopup
         {
             base.OnOpenPopup();
             _bgmToggle.isOn = StaticSettingsData.isOnBGM;
-            _efxToggle.isOn = StaticSettingsData.isOnEFX;
+            _sfxToggle.isOn = StaticSettingsData.isOnSFX;
             _languageDropdown.value = StaticSettingsData.language;
         }
 
@@ -48,42 +47,20 @@ namespace PFS.UI.Popup.settingsPopup
         {
             StaticSettingsData.isOnBGM = _bgmToggle.isOn;
             SoundManager.instance.SetBGM(StaticSettingsData.isOnBGM);
-            SoundManager.instance.PlayEFX(EFXEnum.CLICK_SOUND);
+            SoundManager.instance.PlaySFX(SFXEnum.CLICK_SOUND);
         }
 
-        public void ChangeIsOnEFX()
+        public void ChangeIsOnSFX()
         {
-            StaticSettingsData.isOnEFX = _efxToggle.isOn;
-            SoundManager.instance.SetEFX(StaticSettingsData.isOnEFX);
-            SoundManager.instance.PlayEFX(EFXEnum.CLICK_SOUND);
+            StaticSettingsData.isOnSFX = _sfxToggle.isOn;
+            SoundManager.instance.SetSFX(StaticSettingsData.isOnSFX);
+            SoundManager.instance.PlaySFX(SFXEnum.CLICK_SOUND);
         }
 
         public void ChangeLanguage()
         {
             StaticSettingsData.language = _languageDropdown.value;
-            SetupUIStringData();
-            LanguageActionContainer.LanguageChange();
-            SoundManager.instance.PlayEFX(EFXEnum.CLICK_SOUND);
-        }
-
-        private void SetupUIStringData()
-        {
-            string jsonData;
-
-            switch (StaticSettingsData.language)
-            {
-                case 0:
-                    jsonData = _dataLoader.GetJsonString($"{_uiStringDataPath}_KOR.json");
-                    break;
-                case 1:
-                    jsonData = _dataLoader.GetJsonString($"{_uiStringDataPath}_ENG.json");
-                    break;
-                default:
-                    jsonData = null;
-                    break;
-            }
-
-            StaticUIStringData.uiString = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonData);
+            SoundManager.instance.PlaySFX(SFXEnum.CLICK_SOUND);
         }
 
         private void SaveSettingsData()
@@ -92,7 +69,7 @@ namespace PFS.UI.Popup.settingsPopup
             string jsonData;
 
             structure.is_on_bgm = _bgmToggle.isOn;
-            structure.is_on_efx = _efxToggle.isOn;
+            structure.is_on_sfx = _sfxToggle.isOn;
             structure.language = _languageDropdown.value;
             jsonData = JsonUtility.ToJson(structure);
 

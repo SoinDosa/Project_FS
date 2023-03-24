@@ -982,11 +982,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bgmClipContainer: []
-  _efxClipContainer:
+  _sfxClipContainer:
   - {fileID: 8300000, guid: 6bc30223e83962446aa719195a232552, type: 3}
   - {fileID: 8300000, guid: 6402ef6a45ad43648bcf996a8d03196c, type: 3}
   _bgmAudio: {fileID: 459841874}
-  _efxAudio:
+  _sfxAudio:
   - {fileID: 459841873}
   - {fileID: 459841872}
   - {fileID: 459841871}

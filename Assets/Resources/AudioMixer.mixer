@@ -20,7 +20,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EFX
+  m_Name: SFX
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 1fbfd049d47e1c34c89ff6cf09e80d47
   m_Children: []
@@ -52,7 +52,7 @@ AudioMixerController:
   - guid: aec9f9a1f3c251e4188d7ca376afc22e
     name: BGM
   - guid: b9d05ccf39ec4844bb0654e471e0234e
-    name: EFX
+    name: SFX
   m_AudioMixerGroupViews:
   - guids:
     - 2f532decd1ebc594ca29fbbd5ebe9bd5
