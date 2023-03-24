@@ -5,6 +5,7 @@ using PFS.Data.StaticData.staticSettingsData;
 using PFS.Data.StaticData.staticUserData;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 namespace PFS.Util.gameDataLoader
 {
@@ -29,6 +30,7 @@ namespace PFS.Util.gameDataLoader
         {
             SetupSettingsData();
             SetupUserData();
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[StaticSettingsData.language];
         }
 
         private void SetupSettingsData()

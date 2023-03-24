@@ -6,9 +6,11 @@ using PFS.Data.StaticData.staticSettingsData;
 using PFS.Enum.sfxEnum;
 using PFS.UI.Common.popupBase;
 using PFS.Util.soundManager;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 
 namespace PFS.UI.Popup.settingsPopup
@@ -20,14 +22,9 @@ namespace PFS.UI.Popup.settingsPopup
         [SerializeField] private Toggle _bgmToggle;
         [SerializeField] private Toggle _sfxToggle;
         [SerializeField] private TMP_Dropdown _languageDropdown;
-        private string _uiStringDataPath;
         private DataSaver _dataSaver = new();
         private DataLoader _dataLoader = new();
-
-        private void Awake()
-        {
-            _uiStringDataPath = $"{Application.streamingAssetsPath}/{UI_STRING_DATA_NAME}";
-        }
+        private bool isLanguageChanging;
 
         public override void OnOpenPopup()
         {
@@ -60,7 +57,18 @@ namespace PFS.UI.Popup.settingsPopup
         public void ChangeLanguage()
         {
             StaticSettingsData.language = _languageDropdown.value;
+            StartCoroutine(ChangeLanguageCoroutine());
             SoundManager.instance.PlaySFX(SFXEnum.CLICK_SOUND);
+        }
+
+        IEnumerator ChangeLanguageCoroutine()
+        {
+            isLanguageChanging = true;
+
+            yield return LocalizationSettings.InitializationOperation;
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[StaticSettingsData.language];
+
+            isLanguageChanging = false;
         }
 
         private void SaveSettingsData()

@@ -39,6 +39,18 @@ MonoBehaviour:
     m_Key: LANGUAGE
     m_Metadata:
       m_Items: []
+  - m_Id: 60274677374976
+    m_Key: QUIT_ASK
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60386241667072
+    m_Key: YES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60402683338752
+    m_Key: NO
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

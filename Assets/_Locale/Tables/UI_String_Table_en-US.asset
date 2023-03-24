@@ -42,6 +42,18 @@ MonoBehaviour:
     m_Localized: Language
     m_Metadata:
       m_Items: []
+  - m_Id: 60274677374976
+    m_Localized: Really?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60386241667072
+    m_Localized: YES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60402683338752
+    m_Localized: NO
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
