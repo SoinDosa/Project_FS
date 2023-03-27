@@ -23,7 +23,6 @@ namespace PFS.UI.Popup.settingsPopup
         [SerializeField] private Toggle _sfxToggle;
         [SerializeField] private TMP_Dropdown _languageDropdown;
         private DataSaver _dataSaver = new();
-        private DataLoader _dataLoader = new();
         private bool isLanguageChanging;
 
         public override void OnOpenPopup()

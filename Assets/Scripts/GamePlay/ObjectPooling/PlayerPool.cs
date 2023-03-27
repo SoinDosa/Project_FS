@@ -12,11 +12,6 @@ namespace PFS.GamePlay.ObjectPooling.playerPool
 
         private void Awake()
         {
-            Application.targetFrameRate = 45;
-        }
-
-        private void Start()
-        {
             var obj = GenerateObject();
             obj.transform.position = new Vector3(0, 0, 0);
         }

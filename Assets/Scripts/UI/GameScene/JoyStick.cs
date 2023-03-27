@@ -8,6 +8,7 @@ namespace PFS.UI.GameScene.joyStick
 {
     public class JoyStick : MonoBehaviour, IDragHandler, IEndDragHandler
     {
+        [SerializeField] private float LEVER_RANGE;
         private PlayerController _playerController;
         private RectTransform _rectTransform;
         private RectTransform _lever;
@@ -23,7 +24,7 @@ namespace PFS.UI.GameScene.joyStick
 
         public void OnDrag(PointerEventData eventData)
         {
-            Vector2 pos = Vector2.ClampMagnitude(eventData.position - _rectTransform.anchoredPosition, 110f);
+            Vector2 pos = Vector2.ClampMagnitude(eventData.position - _rectTransform.anchoredPosition, LEVER_RANGE);
             float dir = pos.x < 0 ? -1.0f : 1.0f;
 
             _lever.anchoredPosition = pos;

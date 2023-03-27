@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using PFS.GamePlay.Rule.gameOverChecker;
 
 namespace PFS.GamePlay.Player.playerController
 {
@@ -12,6 +13,14 @@ namespace PFS.GamePlay.Player.playerController
         public List<PlayerEntity> playerEntities;
         public Action<float> MoveEntities;
         public Action JumpEntities;
+
+        private void Update()
+        {
+            if (playerEntities.Count == 0 && GameOverChecker.isGameOver == false)
+            {
+                GameOverChecker.isGameOver = true;
+            }
+        }
 
         public void PlayerMove(float dir)
         {
