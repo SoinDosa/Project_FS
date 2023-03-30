@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Reason_For_Gameover Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Reason_For_Gameover
+  m_TableCollectionNameGuidString: 224aa2346ab07fb4f88c0b46eb8ea522
+  m_Entries:
+  - m_Id: 6681255936
+    m_Key: TIMEOUT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133491843072
+    m_Key: ALLDIE
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 1876090777315835906
+  references:
+    version: 2
+    RefIds:
+    - rid: 1876090777315835906
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1680152049316

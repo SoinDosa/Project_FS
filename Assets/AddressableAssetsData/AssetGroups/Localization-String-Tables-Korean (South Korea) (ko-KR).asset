@@ -23,6 +23,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ko-KR
     - Preload
+  - m_GUID: a6dd7eadc7d4f374cb4c6af4c6c7141e
+    m_Address: Reason_For_Gameover_ko-KR
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ko-KR
+    - Preload
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: f1c15add16311e646b09fb33067ed5b2, type: 2}
   m_SchemaSet:

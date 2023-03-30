@@ -19,7 +19,7 @@ namespace PFS.UI.LobbyScene.lobbyScene
         {
             SceneFader.instance.FadeOut();
             yield return new WaitForSeconds(SceneFader.instance.fadeTime);
-            SceneLoader.instance.LoadSceneAsync(GAME_SCENE_NAME);
+            SceneLoader.instance.LoadSceneAsync(SceneLoader.instance.GAME_SCENE_NAME);
         }
 
         public void OpenPopup(PopupBase popup)

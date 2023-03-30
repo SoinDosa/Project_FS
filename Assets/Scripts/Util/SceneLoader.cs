@@ -9,6 +9,8 @@ namespace PFS.Util.sceneLoader
     {
         public static SceneLoader instance;
         public string sceneName;
+        public string GAME_SCENE_NAME;
+        public string LOBBY_SCENE_NAME;
         [SerializeField] private string _loadSceneName;
 
         private void Awake()

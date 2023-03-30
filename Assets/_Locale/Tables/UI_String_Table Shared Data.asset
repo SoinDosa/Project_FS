@@ -51,6 +51,26 @@ MonoBehaviour:
     m_Key: NO
     m_Metadata:
       m_Items: []
+  - m_Id: 2103189884887040
+    m_Key: CONTINUE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2103252627480576
+    m_Key: BACK_TO_LOBBY
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2103668199120896
+    m_Key: PAUSE
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2104093228916736
+    m_Key: GAME_OVER
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2104152385380352
+    m_Key: CONTINUE_ADS
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

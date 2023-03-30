@@ -1,4 +1,5 @@
 using PFS.GamePlay.Player.playerController;
+using PFS.UI.Common.popupBase;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,9 @@ namespace PFS.GamePlay.Rule.gameOverChecker
     {
         public static bool isGameOver = false;
 
+        [SerializeField] private PopupBase _gameOverPopup;
         private PlayerController _playerController;
+        private bool isGameOverPopupOpen = false;
 
         private void Awake()
         {
@@ -18,9 +21,11 @@ namespace PFS.GamePlay.Rule.gameOverChecker
 
         private void Update()
         {
-            if (isGameOver == true)
+            if (isGameOverPopupOpen == false && isGameOver == true)
             {
                 Debug.Log("Game Over");
+                _gameOverPopup.gameObject.SetActive(true);
+                _gameOverPopup.OnOpenPopup();
             }
         }
     }

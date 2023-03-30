@@ -21,6 +21,10 @@ MonoBehaviour:
     m_Address: Assets/_Locale/Tables/UI_String_Table Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 224aa2346ab07fb4f88c0b46eb8ea522
+    m_Address: Assets/_Locale/Tables/Reason_For_Gameover Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: f1c15add16311e646b09fb33067ed5b2, type: 2}
   m_SchemaSet:
