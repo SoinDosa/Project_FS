@@ -295,6 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552b25736e2d3374b97c92cdbea51386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _reasonForGameover: {fileID: 224873391}
 --- !u!1 &104112759
 GameObject:
   m_ObjectHideFlags: 0
@@ -2929,6 +2930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pausePopup: {fileID: 1120940931}
+  _gameOverPopup: {fileID: 74607663}
 --- !u!1 &1452922529
 GameObject:
   m_ObjectHideFlags: 0
@@ -10817,7 +10819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09fe4755bd9a9984fa1daf3157ad1082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  INITIAL_TIME: 5
+  INITIAL_TIME: 30
   _time: {fileID: 1892700522}
 --- !u!4 &1891642478
 Transform:
@@ -11475,7 +11477,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:b09043b389697284793fd5ed2b74cdd2
     m_TableEntryReference:
-      m_KeyId: 2103668199120896
+      m_KeyId: 2104093228916736
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

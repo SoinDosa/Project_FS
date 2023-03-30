@@ -8,8 +8,9 @@ namespace PFS.UI.Common.popupBase
 {
     public class PopupBase : MonoBehaviour
     {
-        public virtual void OnOpenPopup()
+        public virtual void OnOpenPopup(string msg = null)
         {
+            this.gameObject.SetActive(true);
             SoundManager.instance.PlaySFX(SFXEnum.CLICK_SOUND);
         }
 

@@ -9,7 +9,7 @@ namespace PFS.UI.Popup.pausePopup
 {
     public class PausePopup : PopupBase
     {
-        public override void OnOpenPopup()
+        public override void OnOpenPopup(string msg = null)
         {
             base.OnOpenPopup();
             Time.timeScale = 0f;

@@ -3,15 +3,19 @@ using PFS.Util.sceneFader;
 using PFS.Util.sceneLoader;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace PFS.UI.Popup.gameOverPopup
 {
     public class GameOverPopup : PopupBase
     {
-        public override void OnOpenPopup()
+        [SerializeField] private TextMeshProUGUI _reasonForGameover;
+
+        public override void OnOpenPopup(string msg = null)
         {
             base.OnOpenPopup();
+            _reasonForGameover.text = msg;
             Time.timeScale = 0f;
         }
 

@@ -18,16 +18,6 @@ namespace PFS.GamePlay.Rule.gameOverChecker
         {
             _playerController = FindObjectOfType<PlayerController>();
         }
-
-        private void Update()
-        {
-            if (isGameOverPopupOpen == false && isGameOver == true)
-            {
-                Debug.Log("Game Over");
-                _gameOverPopup.gameObject.SetActive(true);
-                _gameOverPopup.OnOpenPopup();
-            }
-        }
     }
 }
 

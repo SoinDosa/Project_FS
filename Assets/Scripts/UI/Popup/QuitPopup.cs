@@ -7,7 +7,7 @@ namespace PFS.UI.Popup.quitPopup
 {
     public class QuitPopup : PopupBase
     {
-        public override void OnOpenPopup()
+        public override void OnOpenPopup(string msg = null)
         {
             base.OnOpenPopup();
         }
