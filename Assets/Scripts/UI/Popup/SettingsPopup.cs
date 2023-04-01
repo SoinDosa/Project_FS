@@ -25,7 +25,7 @@ namespace PFS.UI.Popup.settingsPopup
         private DataSaver _dataSaver = new();
         private bool isLanguageChanging;
 
-        public override void OnOpenPopup(string msg = null)
+        public override void OnOpenPopup(int msg = -1)
         {
             base.OnOpenPopup();
             _bgmToggle.isOn = StaticSettingsData.isOnBGM;

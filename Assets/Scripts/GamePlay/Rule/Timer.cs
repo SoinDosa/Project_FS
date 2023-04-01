@@ -10,9 +10,10 @@ namespace PFS.GamePlay.Rule.timer
 {
     public class Timer : MonoBehaviour
     {
+        public static float remainTime;
+
         [SerializeField] private float INITIAL_TIME;
         [SerializeField] private TextMeshProUGUI _time;
-        private float _remainTime;
         private bool _isGameOver;
         private GameScene _gameScene;
 
@@ -20,7 +21,7 @@ namespace PFS.GamePlay.Rule.timer
         {
             GameOverChecker.isGameOver = false;
             Application.targetFrameRate = 45;
-            _remainTime = INITIAL_TIME;
+            remainTime = INITIAL_TIME;
         }
 
         private void Start()
@@ -32,7 +33,7 @@ namespace PFS.GamePlay.Rule.timer
         {
             if (GameOverChecker.isGameOver == false)
             {
-                _remainTime -= Time.deltaTime;
+                remainTime -= Time.deltaTime;
                 UpdateTime();
                 CheckGameOver();
             }
@@ -40,17 +41,17 @@ namespace PFS.GamePlay.Rule.timer
 
         private void CheckGameOver()
         {
-            if (_remainTime < 1)
+            if (remainTime < 1)
             {
                 GameOverChecker.isGameOver = true;
-                _gameScene.OpenGameOverPopup(LocalizationSettings.StringDatabase.GetLocalizedString("Reason_For_Gameover", "TIMEOUT", LocalizationSettings.SelectedLocale));
+                _gameScene.OpenGameOverPopup(1);
                 Debug.Log("Time Out");
             }
         }
 
         private void UpdateTime()
         {
-            _time.text = $"{(int)_remainTime}";
+            _time.text = $"{(int)remainTime}";
         }
     }
 }

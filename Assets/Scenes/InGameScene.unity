@@ -295,7 +295,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552b25736e2d3374b97c92cdbea51386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _reasonForGameover: {fileID: 224873391}
+  ADDITIONAL_TIME: 10
+  _gameOverReasonText: {fileID: 224873391}
 --- !u!1 &104112759
 GameObject:
   m_ObjectHideFlags: 0
@@ -1911,7 +1912,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8018dccb1528f7c49953c7982068d613, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameOverPopup: {fileID: 74607663}
 --- !u!4 &901069926
 Transform:
   m_ObjectHideFlags: 0
@@ -2601,7 +2601,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1297005922}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 74607663}
+        m_TargetAssemblyTypeName: PFS.UI.Popup.gameOverPopup.GameOverPopup, Assembly-CSharp
+        m_MethodName: ContinueGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1297005922
 MonoBehaviour:
   m_ObjectHideFlags: 0

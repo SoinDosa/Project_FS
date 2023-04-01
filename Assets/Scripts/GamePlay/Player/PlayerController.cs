@@ -27,7 +27,7 @@ namespace PFS.GamePlay.Player.playerController
             if (playerEntities.Count == 0 && GameOverChecker.isGameOver == false)
             {
                 GameOverChecker.isGameOver = true;
-                _gameScene.OpenGameOverPopup(LocalizationSettings.StringDatabase.GetLocalizedString("Reason_For_Gameover", "ALLDIE", LocalizationSettings.SelectedLocale));
+                _gameScene.OpenGameOverPopup(0);
             }
         }
 
