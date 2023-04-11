@@ -28,13 +28,19 @@ namespace PFS.UI.GameScene.joyStick
             float dir = pos.x < 0 ? -1.0f : 1.0f;
 
             _lever.anchoredPosition = pos;
-            _playerController.MoveEntities(dir);
+            if (_playerController.MoveEntities != null)
+            {
+                _playerController.MoveEntities(dir);
+            }
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
             _lever.anchoredPosition = Vector2.zero;
-            _playerController.MoveEntities(0.0f);
+            if (_playerController.MoveEntities != null)
+            {
+                _playerController.MoveEntities(0.0f);
+            }
         }
     }
 }

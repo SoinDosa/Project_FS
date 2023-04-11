@@ -1,4 +1,5 @@
 using GoogleMobileAds.Api;
+using PFS.UI.Popup.gameOverPopup;
 using System;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ namespace PFS.Util.Ads.bannerAdsManager
     public class BannerAdsManager : MonoBehaviour
     {
         private BannerView _bannerView;
+        private RewardedAd _rewardedAd;
 
 #if UNITY_ANDROID
         private string _adUnitId = "ca-app-pub-3940256099942544/6300978111";
@@ -19,7 +21,7 @@ namespace PFS.Util.Ads.bannerAdsManager
         {
             MobileAds.Initialize((InitializationStatus initStatus) =>
             {
-                LoadAd();
+                LoadBannerAd();
             });
         }
 
@@ -36,7 +38,7 @@ namespace PFS.Util.Ads.bannerAdsManager
             _bannerView = new BannerView(_adUnitId, adSize, AdPosition.Top);
         }
 
-        public void LoadAd()
+        public void LoadBannerAd()
         {
             if (_bannerView == null)
             {
@@ -106,5 +108,6 @@ namespace PFS.Util.Ads.bannerAdsManager
                 _bannerView = null;
             }
         }
+
     }
 }

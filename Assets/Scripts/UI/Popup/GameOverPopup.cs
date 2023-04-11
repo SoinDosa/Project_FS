@@ -2,6 +2,7 @@ using PFS.GamePlay.ObjectPooling.playerPool;
 using PFS.GamePlay.Rule.gameOverChecker;
 using PFS.GamePlay.Rule.timer;
 using PFS.UI.Common.popupBase;
+using PFS.Util.Ads.rewardAdsManager;
 using PFS.Util.sceneFader;
 using PFS.Util.sceneLoader;
 using System.Collections;
@@ -9,19 +10,24 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
+using UnityEngine.UI;
 
 namespace PFS.UI.Popup.gameOverPopup
 {
     public class GameOverPopup : PopupBase
     {
         [SerializeField] private float ADDITIONAL_TIME;
+        [SerializeField] private Button _continueButton;
         [SerializeField] private TextMeshProUGUI _gameOverReasonText;
         private int _gameOverReason;
         private PlayerPool _playerPool;
+        private RewardAdsManager _rewardAdsManager;
 
         private void Awake()
         {
             _playerPool = FindObjectOfType<PlayerPool>();
+            _rewardAdsManager = FindObjectOfType<RewardAdsManager>();
+            _rewardAdsManager.OnGameContinue += ContinueGame;
         }
 
         public override void OnOpenPopup(int msg = -1)
@@ -67,6 +73,7 @@ namespace PFS.UI.Popup.gameOverPopup
             }
 
             GameOverChecker.isGameOver = false;
+            _continueButton.interactable = false;
             OnClosePopup();
         }
 
