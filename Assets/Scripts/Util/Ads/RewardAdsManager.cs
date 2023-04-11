@@ -13,7 +13,7 @@ namespace PFS.Util.Ads.rewardAdsManager
         private RewardedAd _rewardedAd;
 
 #if UNITY_ANDROID
-        private string _adUnitId = "ca-app-pub-3940256099942544/6300978111";
+        private string _adUnitId = "ca-app-pub-3940256099942544/5224354917";
 #elif UNITY_IPHONE
   private string _adUnitId = "ca-app-pub-3940256099942544/2934735716";
 #else

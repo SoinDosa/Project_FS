@@ -1466,6 +1466,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2099147720}
+        m_TargetAssemblyTypeName: PFS.Util.Ads.bannerAdsManager.BannerAdsManager,
+          Assembly-CSharp
+        m_MethodName: DestroyAd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 74607663}
         m_TargetAssemblyTypeName: PFS.UI.Popup.gameOverPopup.GameOverPopup, Assembly-CSharp
         m_MethodName: GoToLobby
@@ -2208,6 +2221,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2099147720}
+        m_TargetAssemblyTypeName: PFS.Util.Ads.bannerAdsManager.BannerAdsManager,
+          Assembly-CSharp
+        m_MethodName: DestroyAd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1120940931}
         m_TargetAssemblyTypeName: PFS.UI.Popup.pausePopup.PausePopup, Assembly-CSharp
         m_MethodName: GoToLobby
