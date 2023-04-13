@@ -1,4 +1,5 @@
 using Cinemachine;
+using PFS.GamePlay.Enemy.enemyBase;
 using PFS.GamePlay.ObjectPooling.playerPool;
 using PFS.GamePlay.Player.playerController;
 using System.Collections;
@@ -65,6 +66,16 @@ namespace PFS.GamePlay.Player.playerEntity
             if (collision.CompareTag("DestroyZone") && isRemoved == false)
             {
                 Debug.Log("Player removed");
+                OnRemoved();
+                _playerPool.DestoryObject(this.gameObject);
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Enemy") && isRemoved == false)
+            {
+                collision.gameObject.GetComponent<EnemyBase>().HP--;
                 OnRemoved();
                 _playerPool.DestoryObject(this.gameObject);
             }

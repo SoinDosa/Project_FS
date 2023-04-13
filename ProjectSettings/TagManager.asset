@@ -7,6 +7,7 @@ TagManager:
   - DestroyZone
   - TileMap
   - CopyItem
+  - Enemy
   layers:
   - Default
   - TransparentFX
