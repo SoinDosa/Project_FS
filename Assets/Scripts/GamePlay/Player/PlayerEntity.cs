@@ -75,7 +75,7 @@ namespace PFS.GamePlay.Player.playerEntity
         {
             if (collision.gameObject.CompareTag("Enemy") && isRemoved == false)
             {
-                collision.gameObject.GetComponent<EnemyBase>().HP--;
+                collision.gameObject.GetComponent<EnemyBase>().OnDamaged();
                 OnRemoved();
                 _playerPool.DestoryObject(this.gameObject);
             }
