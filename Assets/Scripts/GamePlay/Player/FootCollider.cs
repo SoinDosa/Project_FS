@@ -16,7 +16,7 @@ namespace PFS.GamePlay.Player.footColllider
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            if(collision.CompareTag("TileMap") || collision.CompareTag("Player"))
+            if(collision.CompareTag("Tilemap") || collision.CompareTag("Player"))
             {
                 _playerEntity.isGround = true;
             }
@@ -24,7 +24,7 @@ namespace PFS.GamePlay.Player.footColllider
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.CompareTag("TileMap") || collision.CompareTag("Player"))
+            if (collision.CompareTag("Tilemap") || collision.CompareTag("Player"))
             {
                 _playerEntity.isGround = false;
             }

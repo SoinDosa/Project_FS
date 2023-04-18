@@ -14,6 +14,19 @@ namespace PFS.GamePlay.Enemy.enemyBase
 
         abstract public void Attack();
         abstract public void Move();
-        abstract public void OnDamaged();
+        virtual public void OnDamaged()
+        {
+            _hp--;
+            Debug.Log($"Enemy HP = {_hp}");
+            if (_hp <= 0)
+            {
+                Destroy(this.gameObject);
+
+                return;
+            }
+
+            float ratio = (float)_hp / INIT_HP;
+            _hpBar.transform.localScale = new Vector3(ratio, _hpBar.transform.localScale.y, _hpBar.transform.localScale.z);
+        }
     }
 }

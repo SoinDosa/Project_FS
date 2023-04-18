@@ -5,9 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - DestroyZone
-  - TileMap
   - CopyItem
   - Enemy
+  - Tilemap
   layers:
   - Default
   - TransparentFX
@@ -16,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Player
-  - 
+  - Tilemap
   - 
   - 
   - 
