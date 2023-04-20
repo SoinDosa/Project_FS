@@ -1,3 +1,4 @@
+using PFS.GamePlay.ObjectPooling.objectPool;
 using PFS.GamePlay.ObjectPooling.playerPool;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +10,13 @@ namespace PFS.GamePlay.Item.copyItem
     {
         [SerializeField] private int _copyCount;
         private PlayerPool _playerPool;
+        private ObjectPool _objectPool;
         private bool isUsed;
+
+        private void Awake()
+        {
+            _objectPool = GameObject.Find("PlayerPool").GetComponent<ObjectPool>();   
+        }
 
         private void OnEnable()
         {
@@ -24,7 +31,8 @@ namespace PFS.GamePlay.Item.copyItem
 
                 for (int i = 0; i < _copyCount; ++i)
                 {
-                    var obj = _playerPool.GenerateObject();
+                    //var obj = _playerPool.GenerateObject();
+                    var obj = _objectPool.PullObject();
                     obj.transform.position = this.transform.position;
                 }
 

@@ -1,3 +1,4 @@
+using PFS.GamePlay.ObjectPooling.objectPool;
 using PFS.GamePlay.ObjectPooling.playerPool;
 using PFS.GamePlay.Rule.gameOverChecker;
 using PFS.GamePlay.Rule.timer;
@@ -21,11 +22,13 @@ namespace PFS.UI.Popup.gameOverPopup
         [SerializeField] private TextMeshProUGUI _gameOverReasonText;
         private int _gameOverReason;
         private PlayerPool _playerPool;
+        private ObjectPool _objectPool;
         private RewardAdsManager _rewardAdsManager;
 
         private void Awake()
         {
             _playerPool = FindObjectOfType<PlayerPool>();
+            _objectPool = GameObject.Find("PlayerPool").GetComponent<ObjectPool>();
             _rewardAdsManager = FindObjectOfType<RewardAdsManager>();
             _rewardAdsManager.OnGameContinue += ContinueGame;
         }
@@ -64,7 +67,8 @@ namespace PFS.UI.Popup.gameOverPopup
             {
                 case 0:
                     Timer.remainTime += ADDITIONAL_TIME;
-                    var obj = _playerPool.GenerateObject();
+                    //var obj = _playerPool.GenerateObject();
+                    var obj = _objectPool.PullObject();
                     obj.transform.position = Camera.main.transform.position;
                     break;
                 case 1:

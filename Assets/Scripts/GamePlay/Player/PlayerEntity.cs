@@ -1,5 +1,6 @@
 using Cinemachine;
 using PFS.GamePlay.Enemy.enemyBase;
+using PFS.GamePlay.ObjectPooling.objectPool;
 using PFS.GamePlay.ObjectPooling.playerPool;
 using PFS.GamePlay.Player.playerController;
 using System.Collections;
@@ -18,6 +19,7 @@ namespace PFS.GamePlay.Player.playerEntity
         private Rigidbody2D _rigidbody2D;
         private BoxCollider2D _footCollider;
         private PlayerPool _playerPool;
+        private ObjectPool _objectPool;
         [SerializeField] private GameObject _parentObject;
         public bool isRemoved;
         public bool isGround;
@@ -26,9 +28,10 @@ namespace PFS.GamePlay.Player.playerEntity
         {
             _cinemachineTargetGroup = FindObjectOfType<CinemachineTargetGroup>();
             _playerController = FindObjectOfType<PlayerController>();
+            _objectPool = GameObject.Find("PlayerPool").GetComponent<ObjectPool>();
         }
 
-        public void OnSpawned()
+        public void OnEnable()
         {
             isRemoved = false;
             _cinemachineTargetGroup.AddMember(this.transform, 1.0f, 5.0f);
@@ -36,17 +39,39 @@ namespace PFS.GamePlay.Player.playerEntity
             _playerController.MoveEntities += Run;
             _playerController.JumpEntities += Jump;
             _rigidbody2D = GetComponent<Rigidbody2D>();
-            _playerPool = FindObjectOfType<PlayerPool>();
+            //_playerPool = FindObjectOfType<PlayerPool>();
+            Debug.Log("OnEnble Player!");
         }
 
-        public void OnRemoved()
+        public void OnDisable()
         {
             _cinemachineTargetGroup.RemoveMember(this.transform);
             _playerController.MoveEntities -= Run;
             _playerController.JumpEntities -= Jump;
             isRemoved = true;
             _playerController.playerEntities.Remove(this);
+            Debug.Log("OnDisable Player!");
         }
+
+        //public void OnSpawned()
+        //{
+        //    isRemoved = false;
+        //    _cinemachineTargetGroup.AddMember(this.transform, 1.0f, 5.0f);
+        //    _playerController.playerEntities.Add(this);
+        //    _playerController.MoveEntities += Run;
+        //    _playerController.JumpEntities += Jump;
+        //    _rigidbody2D = GetComponent<Rigidbody2D>();
+        //    //_playerPool = FindObjectOfType<PlayerPool>();
+        //}
+
+        //public void OnRemoved()
+        //{
+        //    _cinemachineTargetGroup.RemoveMember(this.transform);
+        //    _playerController.MoveEntities -= Run;
+        //    _playerController.JumpEntities -= Jump;
+        //    isRemoved = true;
+        //    _playerController.playerEntities.Remove(this);
+        //}
 
         public void Run(float dir)
         {
@@ -65,9 +90,9 @@ namespace PFS.GamePlay.Player.playerEntity
         {
             if (collision.CompareTag("DestroyZone") && isRemoved == false)
             {
-                Debug.Log("Player removed");
-                OnRemoved();
-                _playerPool.DestoryObject(this.gameObject);
+                //OnRemoved();
+                //_playerPool.DestoryObject(this.gameObject);
+                _objectPool.PushObject(this.gameObject);
             }
         }
 
@@ -76,8 +101,9 @@ namespace PFS.GamePlay.Player.playerEntity
             if (collision.gameObject.CompareTag("Enemy") && isRemoved == false)
             {
                 collision.gameObject.GetComponent<EnemyBase>().OnDamaged();
-                OnRemoved();
-                _playerPool.DestoryObject(this.gameObject);
+                //OnRemoved();
+                //_playerPool.DestoryObject(this.gameObject);
+                _objectPool.PushObject(this.gameObject);
             }
         }
     }
