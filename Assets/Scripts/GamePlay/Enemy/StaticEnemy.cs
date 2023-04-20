@@ -4,9 +4,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PFS.GamePlay.Enemy.bomb
+namespace PFS.GamePlay.Enemy.staticEnemy
 {
-    public class Bomb : EnemyBase
+    public class StaticEnemy : EnemyBase
     {
         private void Start()
         {

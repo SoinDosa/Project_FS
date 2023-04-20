@@ -1,4 +1,4 @@
-using PFS.GamePlay.Enemy.patroller;
+using PFS.GamePlay.Enemy.dynamicEnemy;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,11 +7,11 @@ namespace PFS.GamePlay.Enemy
 {
     public class GroundChecker : MonoBehaviour
     {
-        private Patroller _patroller;
+        private DynamicEnemy _patroller;
 
         private void Start()
         {
-            _patroller = GetComponentInParent<Patroller>();
+            _patroller = GetComponentInParent<DynamicEnemy>();
         }
 
         private void OnTriggerExit2D(Collider2D collision)

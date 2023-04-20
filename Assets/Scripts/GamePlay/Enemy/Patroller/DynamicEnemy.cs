@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PFS.GamePlay.Enemy.patroller
+namespace PFS.GamePlay.Enemy.dynamicEnemy
 {
-    public class Patroller : EnemyBase
+    public class DynamicEnemy : EnemyBase
     {
         [SerializeField] private float _moveSpeed;
 
