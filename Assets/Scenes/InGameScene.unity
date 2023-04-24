@@ -2427,7 +2427,7 @@ GameObject:
   - component: {fileID: 1266298577}
   - component: {fileID: 1266298576}
   - component: {fileID: 1266298575}
-  - component: {fileID: 1266298574}
+  - component: {fileID: 1266298579}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: CopyItem
@@ -2450,19 +2450,6 @@ Transform:
   m_Father: {fileID: 1896705716}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1266298574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266298572}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f6cf764f79ec7448944ada21931f127, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _copyCount: 2
 --- !u!50 &1266298575
 Rigidbody2D:
   serializedVersion: 4
@@ -2571,7 +2558,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 955be4b8fa42c5748864ce733f799678, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7bce6a49ff36070428b7e836ab417d52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2582,6 +2569,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1266298579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266298572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c21d359123e3044a8084d7aa53ac26c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addTime: 10
 --- !u!1 &1297005919
 GameObject:
   m_ObjectHideFlags: 0
@@ -10852,7 +10852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1896705716}
   m_Layer: 0
-  m_Name: CopyItem (4)
+  m_Name: TimeItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

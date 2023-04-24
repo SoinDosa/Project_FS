@@ -21,13 +21,11 @@ namespace PFS.UI.Popup.gameOverPopup
         [SerializeField] private Button _continueButton;
         [SerializeField] private TextMeshProUGUI _gameOverReasonText;
         private int _gameOverReason;
-        private PlayerPool _playerPool;
         private ObjectPool _objectPool;
         private RewardAdsManager _rewardAdsManager;
 
         private void Awake()
         {
-            _playerPool = FindObjectOfType<PlayerPool>();
             _objectPool = GameObject.Find("PlayerPool").GetComponent<ObjectPool>();
             _rewardAdsManager = FindObjectOfType<RewardAdsManager>();
             _rewardAdsManager.OnGameContinue += ContinueGame;

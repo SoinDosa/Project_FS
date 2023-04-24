@@ -9,18 +9,12 @@ namespace PFS.GamePlay.Item.copyItem
     public class CopyItem : MonoBehaviour
     {
         [SerializeField] private int _copyCount;
-        private PlayerPool _playerPool;
         private ObjectPool _objectPool;
         private bool isUsed;
 
         private void Awake()
         {
             _objectPool = GameObject.Find("PlayerPool").GetComponent<ObjectPool>();   
-        }
-
-        private void OnEnable()
-        {
-            _playerPool = FindObjectOfType<PlayerPool>();
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
