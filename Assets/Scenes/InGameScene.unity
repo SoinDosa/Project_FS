@@ -11696,6 +11696,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2177864222959319397, guid: f9c171d695a63a34cbbfda149a62e07d, type: 3}
+      propertyPath: ATTACK_DELAY
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177864222959319397, guid: f9c171d695a63a34cbbfda149a62e07d, type: 3}
+      propertyPath: _shotAngle.z
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177864222959319397, guid: f9c171d695a63a34cbbfda149a62e07d, type: 3}
+      propertyPath: _shotPower.y
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2177864222959319404, guid: f9c171d695a63a34cbbfda149a62e07d, type: 3}
       propertyPath: m_Name
       value: Archor

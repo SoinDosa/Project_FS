@@ -8,6 +8,7 @@ TagManager:
   - CopyItem
   - Enemy
   - Tilemap
+  - Arrow
   layers:
   - Default
   - TransparentFX

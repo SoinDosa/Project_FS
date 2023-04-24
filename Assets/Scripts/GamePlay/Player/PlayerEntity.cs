@@ -105,6 +105,11 @@ namespace PFS.GamePlay.Player.playerEntity
                 //_playerPool.DestoryObject(this.gameObject);
                 _objectPool.PushObject(this.gameObject);
             }
+
+            if (collision.gameObject.CompareTag("Arrow") && isRemoved == false)
+            {
+                _objectPool.PushObject(this.gameObject);
+            }
         }
     }
 

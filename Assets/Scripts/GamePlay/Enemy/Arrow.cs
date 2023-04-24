@@ -27,5 +27,13 @@ namespace PFS.GamePlay.Enemy.arrow
             yield return _sleep;
             _arrowPool.PushObject(this.gameObject);
         }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.transform.CompareTag("Tilemap") == true || collision.transform.CompareTag("Player") == true)
+            {
+                _arrowPool.PushObject(this.gameObject);
+            }
+        }
     }
 }
