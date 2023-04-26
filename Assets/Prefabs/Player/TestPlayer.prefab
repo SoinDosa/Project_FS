@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerSpeed: 500
-  _jumpPower: 700
+  _jumpPower: 800
   _parentObject: {fileID: 0}
   isRemoved: 0
   isGround: 0

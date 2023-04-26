@@ -1,6 +1,5 @@
 using PFS.GamePlay.ObjectPooling.objectPool;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace PFS.GamePlay.Enemy.arrow

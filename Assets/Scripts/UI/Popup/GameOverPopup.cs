@@ -1,5 +1,4 @@
 using PFS.GamePlay.ObjectPooling.objectPool;
-using PFS.GamePlay.ObjectPooling.playerPool;
 using PFS.GamePlay.Rule.gameOverChecker;
 using PFS.GamePlay.Rule.timer;
 using PFS.UI.Common.popupBase;
@@ -7,7 +6,6 @@ using PFS.Util.Ads.rewardAdsManager;
 using PFS.Util.sceneFader;
 using PFS.Util.sceneLoader;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;

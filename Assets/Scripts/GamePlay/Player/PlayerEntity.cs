@@ -1,7 +1,6 @@
 using Cinemachine;
 using PFS.GamePlay.Enemy.enemyBase;
 using PFS.GamePlay.ObjectPooling.objectPool;
-using PFS.GamePlay.ObjectPooling.playerPool;
 using PFS.GamePlay.Player.playerController;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,7 +17,6 @@ namespace PFS.GamePlay.Player.playerEntity
         private PlayerController _playerController;
         private Rigidbody2D _rigidbody2D;
         private BoxCollider2D _footCollider;
-        private PlayerPool _playerPool;
         private ObjectPool _objectPool;
         [SerializeField] private GameObject _parentObject;
         public bool isRemoved;

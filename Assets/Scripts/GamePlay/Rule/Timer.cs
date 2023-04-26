@@ -1,10 +1,7 @@
 using PFS.GamePlay.Rule.gameOverChecker;
 using PFS.UI.GameScene.gameScene;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Localization.Settings;
 
 namespace PFS.GamePlay.Rule.timer
 {

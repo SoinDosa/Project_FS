@@ -1,7 +1,6 @@
 using PFS.Data.StaticData.staticSettingsData;
 using PFS.Enum.bgmEnum;
 using PFS.Enum.sfxEnum;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;

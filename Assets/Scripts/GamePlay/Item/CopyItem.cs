@@ -1,7 +1,4 @@
 using PFS.GamePlay.ObjectPooling.objectPool;
-using PFS.GamePlay.ObjectPooling.playerPool;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace PFS.GamePlay.Item.copyItem
@@ -25,7 +22,6 @@ namespace PFS.GamePlay.Item.copyItem
 
                 for (int i = 0; i < _copyCount; ++i)
                 {
-                    //var obj = _playerPool.GenerateObject();
                     var obj = _objectPool.PullObject();
                     obj.transform.position = this.transform.position;
                 }
