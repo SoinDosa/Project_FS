@@ -7,7 +7,7 @@ namespace PFS.GamePlay.Enemy
     {
         private DynamicEnemy _patroller;
 
-        private void Start()
+        private void Awake()
         {
             _patroller = GetComponentInParent<DynamicEnemy>();
         }

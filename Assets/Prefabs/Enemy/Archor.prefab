@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   INIT_HP: 2
-  ATTACK_DELAY: 1
+  ATTACK_DELAY: 3
   _hpBar: {fileID: 2177864222605643612}
-  _shotAngle: {x: 0, y: 0, z: 45}
+  _shotAngle: {x: 0, y: 0, z: 75}
   _shotPower: {x: -10, y: 10, z: 0}

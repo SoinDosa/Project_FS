@@ -11,7 +11,7 @@ namespace PFS.GamePlay.Enemy.dynamicEnemy
         private SpriteRenderer _spriteRenderer;
         private float _direction;
 
-        private void Start()
+        private void Awake()
         {
             _hp = INIT_HP;
 
