@@ -7,7 +7,6 @@ namespace PFS.GamePlay.Enemy.enemyArchor
 {
     public class EnemyArchor : StaticEnemy
     {
-        [SerializeField] private Vector3 _shotAngle;
         [SerializeField] private Vector3 _shotPower;
         private bool _isAttackable;
         private WaitForSeconds _wait;
@@ -41,9 +40,8 @@ namespace PFS.GamePlay.Enemy.enemyArchor
                 _isAttackable = false;
 
                 var obj = _arrowPool.PullObject();
-                obj.transform.position = this.transform.position + new Vector3(-3, 0, 0);
-                obj.transform.rotation = Quaternion.Euler(_shotAngle);
-                obj.GetComponent<Rigidbody2D>().velocity = _shotPower;
+                obj.transform.position = this.transform.position + new Vector3(-2, 0, 0);
+                obj.GetComponent<Rigidbody2D>().AddForce(_shotPower);
 
                 yield return _wait;
                 _isAttackable = true;
