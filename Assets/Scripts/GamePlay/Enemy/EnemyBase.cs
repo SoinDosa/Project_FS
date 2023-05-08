@@ -1,3 +1,4 @@
+using PFS.GamePlay.Rule.gameManager;
 using UnityEngine;
 
 namespace PFS.GamePlay.Enemy.enemyBase
@@ -5,6 +6,7 @@ namespace PFS.GamePlay.Enemy.enemyBase
     public abstract class EnemyBase : MonoBehaviour
     {
         [SerializeField] protected int INIT_HP;
+        [SerializeField] protected ulong SCORE;
         [SerializeField] protected float ATTACK_DELAY;
         [SerializeField] protected Transform _hpBar;
         protected int _hp;
@@ -19,7 +21,7 @@ namespace PFS.GamePlay.Enemy.enemyBase
             if (_hp <= 0)
             {
                 Destroy(this.gameObject);
-
+                GameManager.totalScore += SCORE;
                 return;
             }
 

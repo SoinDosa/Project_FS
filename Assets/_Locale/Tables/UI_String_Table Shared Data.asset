@@ -71,6 +71,10 @@ MonoBehaviour:
     m_Key: CONTINUE_ADS
     m_Metadata:
       m_Items: []
+  - m_Id: 16406665149517824
+    m_Key: YOUR_HIGH_SCORE
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

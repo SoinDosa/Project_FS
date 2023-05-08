@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-using PFS.GamePlay.Rule.gameOverChecker;
+using PFS.GamePlay.Rule.gameManager;
 using PFS.UI.GameScene.gameScene;
 using UnityEngine.Localization.Settings;
 
@@ -24,9 +24,9 @@ namespace PFS.GamePlay.Player.playerController
 
         private void Update()
         {
-            if (playerEntities.Count == 0 && GameOverChecker.isGameOver == false)
+            if (playerEntities.Count == 0 && GameManager.isGameOver == false)
             {
-                GameOverChecker.isGameOver = true;
+                GameManager.isGameOver = true;
                 _gameScene.OpenGameOverPopup(0);
             }
         }

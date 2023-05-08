@@ -51,6 +51,9 @@ namespace PFS.Util.gameDataLoader
         {
             if (!File.Exists(_userDataPath))
             {
+                StaticUserData.isNewbie = true;
+                StaticUserData.maxScore = 0;
+
                 return;
             }
             string jsonData = _dataLoader.GetJsonString(_userDataPath);

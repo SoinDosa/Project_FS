@@ -565,6 +565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   INIT_HP: 2
+  SCORE: 60
   ATTACK_DELAY: 0
   _hpBar: {fileID: 355366616533686449}
   _moveSpeed: 1

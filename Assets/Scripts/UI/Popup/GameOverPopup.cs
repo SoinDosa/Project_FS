@@ -1,5 +1,8 @@
+using PFS.Data.Common.dataSaver;
+using PFS.Data.DataStructures.userDataStructure;
+using PFS.Data.StaticData.staticUserData;
 using PFS.GamePlay.ObjectPooling.objectPool;
-using PFS.GamePlay.Rule.gameOverChecker;
+using PFS.GamePlay.Rule.gameManager;
 using PFS.GamePlay.Rule.timer;
 using PFS.UI.Common.popupBase;
 using PFS.Util.Ads.rewardAdsManager;
@@ -15,12 +18,14 @@ namespace PFS.UI.Popup.gameOverPopup
 {
     public class GameOverPopup : PopupBase
     {
+        [SerializeField] private string USERS_DATA_NAME;
         [SerializeField] private float ADDITIONAL_TIME;
         [SerializeField] private Button _continueButton;
         [SerializeField] private TextMeshProUGUI _gameOverReasonText;
         private int _gameOverReason;
         private ObjectPool _objectPool;
-        private RewardAdsManager _rewardAdsManager;
+        private RewardAdsManager _rewardAdsManager; 
+        private DataSaver _dataSaver = new();
 
         private void Awake()
         {
@@ -54,6 +59,7 @@ namespace PFS.UI.Popup.gameOverPopup
         public void GoToLobby()
         {
             Time.timeScale = 1f;
+            SaveUsersData();
             StartCoroutine(GoToLobbyCoroutine());
         }
 
@@ -72,7 +78,7 @@ namespace PFS.UI.Popup.gameOverPopup
                     break;
             }
 
-            GameOverChecker.isGameOver = false;
+            GameManager.isGameOver = false;
             _continueButton.interactable = false;
             OnClosePopup();
         }
@@ -82,6 +88,26 @@ namespace PFS.UI.Popup.gameOverPopup
             SceneFader.instance.FadeOut();
             yield return new WaitForSeconds(SceneFader.instance.fadeTime);
             SceneLoader.instance.LoadSceneAsync(SceneLoader.instance.LOBBY_SCENE_NAME);
+        }
+
+        public void SaveUsersData()
+        {
+            UserDataStructure structure;
+            string jsonData;
+
+            structure.is_newbie = false;
+            if (GameManager.totalScore > StaticUserData.maxScore)
+            {
+                structure.max_score = StaticUserData.maxScore = GameManager.totalScore;
+            }
+            else
+            {
+                structure.max_score = StaticUserData.maxScore;
+            }
+            
+            jsonData = JsonUtility.ToJson(structure);
+
+            _dataSaver.JsonStringSave($"{Application.persistentDataPath}/{USERS_DATA_NAME}", jsonData);
         }
     }
 }

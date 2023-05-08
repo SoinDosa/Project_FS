@@ -295,6 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552b25736e2d3374b97c92cdbea51386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  USERS_DATA_NAME: UserData.json
   ADDITIONAL_TIME: 10
   _continueButton: {fileID: 1297005921}
   _gameOverReasonText: {fileID: 224873391}
@@ -1289,7 +1290,7 @@ GameObject:
   - component: {fileID: 901069926}
   - component: {fileID: 901069925}
   m_Layer: 0
-  m_Name: GameOverChecker
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

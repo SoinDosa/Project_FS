@@ -1,4 +1,4 @@
-using PFS.GamePlay.Rule.gameOverChecker;
+using PFS.GamePlay.Rule.gameManager;
 using PFS.UI.GameScene.gameScene;
 using TMPro;
 using UnityEngine;
@@ -16,7 +16,7 @@ namespace PFS.GamePlay.Rule.timer
 
         private void Awake()
         {
-            GameOverChecker.isGameOver = false;
+            GameManager.isGameOver = false;
             Application.targetFrameRate = 45;
             remainTime = INITIAL_TIME;
         }
@@ -28,7 +28,7 @@ namespace PFS.GamePlay.Rule.timer
 
         private void Update()
         {
-            if (GameOverChecker.isGameOver == false)
+            if (GameManager.isGameOver == false)
             {
                 remainTime -= Time.deltaTime;
                 UpdateTime();
@@ -40,7 +40,7 @@ namespace PFS.GamePlay.Rule.timer
         {
             if (remainTime < 1)
             {
-                GameOverChecker.isGameOver = true;
+                GameManager.isGameOver = true;
                 _gameScene.OpenGameOverPopup(1);
                 Debug.Log("Time Out");
             }

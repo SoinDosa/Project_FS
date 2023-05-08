@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   INIT_HP: 1
+  SCORE: 20
   ATTACK_DELAY: 0
   _hpBar: {fileID: 8991433309192398194}
 --- !u!58 &8991433308922680134
