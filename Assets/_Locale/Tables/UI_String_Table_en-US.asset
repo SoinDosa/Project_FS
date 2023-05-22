@@ -78,6 +78,10 @@ MonoBehaviour:
     m_Localized: What is YOUR HIGH SCORE?
     m_Metadata:
       m_Items: []
+  - m_Id: 21396006738059264
+    m_Localized: 'Your score is '
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

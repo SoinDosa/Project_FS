@@ -22,6 +22,7 @@ namespace PFS.UI.Popup.gameOverPopup
         [SerializeField] private float ADDITIONAL_TIME;
         [SerializeField] private Button _continueButton;
         [SerializeField] private TextMeshProUGUI _gameOverReasonText;
+        [SerializeField] private TextMeshProUGUI _scoreText;
         private int _gameOverReason;
         private ObjectPool _objectPool;
         private RewardAdsManager _rewardAdsManager; 
@@ -47,6 +48,8 @@ namespace PFS.UI.Popup.gameOverPopup
                     _gameOverReasonText.text = LocalizationSettings.StringDatabase.GetLocalizedString("Reason_For_Gameover", "TIMEOUT", LocalizationSettings.SelectedLocale);
                     break;
             }
+
+            _scoreText.text = $"{LocalizationSettings.StringDatabase.GetLocalizedString("UI_String_Table", "YOUR_SCORE_IS", LocalizationSettings.SelectedLocale)}{GameManager.totalScore}!";
             Time.timeScale = 0f;
         }
 

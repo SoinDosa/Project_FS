@@ -75,6 +75,10 @@ MonoBehaviour:
     m_Key: YOUR_HIGH_SCORE
     m_Metadata:
       m_Items: []
+  - m_Id: 21396006738059264
+    m_Key: YOUR_SCORE_IS
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
