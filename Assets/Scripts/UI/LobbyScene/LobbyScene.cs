@@ -37,9 +37,9 @@ namespace PFS.UI.LobbyScene.lobbyScene
             popup.OnOpenPopup();
         }
 
-        private void SetupHighScore()
+        public void SetupHighScore()
         {
-            _highScoreText.text = $"{LocalizationSettings.StringDatabase.GetLocalizedString("UI_String_Table", "YOUR_HIGH_SCORE", LocalizationSettings.SelectedLocale)} : {StaticUserData.maxScore}";
+            _highScoreText.text = $"{StaticUserData.maxScore}";
         }
     }
 }
