@@ -2968,6 +2968,8 @@ MonoBehaviour:
   _mapsContainer:
   - {fileID: 8284490590118999463, guid: d3234ed6342ff0a45ba29332dc4a383f, type: 3}
   - {fileID: 4305128256221631741, guid: 05f9f29e713ed804d967ddbc9b5d6b3b, type: 3}
+  - {fileID: 8274508365926918046, guid: 31f21c006bb5cb14093625aefc93ada8, type: 3}
+  - {fileID: 3717732176227235708, guid: 93c2fbc16ff5bc54d8515b80cd94f9b5, type: 3}
   _gapBetweenMaps: 40
   _itemList:
   - {fileID: 1757670716525074435, guid: 5e8e302e8fac0f042a4a5b7334c4fef2, type: 3}
